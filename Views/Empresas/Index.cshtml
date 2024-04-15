@@ -1,0 +1,25 @@
+@model IEnumerable<EmpresaEnderecoViewModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().empresa.cnpj)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().empresa.nome)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().empresa.atividadePrincipal)</th>
+            <th>Detalhes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.empresa.cnpj)</td>
+                <td>@Html.DisplayFor(modelItem => item.empresa.nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.empresa.atividadePrincipal)</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.empresa.id">Detalhes</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Consultar Empresa";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="ConsultarCNPJ" method="post">
+    <div class="form-group">
+        <label for="cnpj">CNPJ</label>
+        <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Consultar</button>
+</form>

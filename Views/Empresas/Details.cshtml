@@ -1,0 +1,79 @@
+@model EmpresaEnderecoViewModel
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.empresa.cnpj)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.empresa.cnpj)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.empresa.nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.empresa.nome)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.empresa.atividadePrincipal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.empresa.atividadePrincipal)
+        </dd>
+
+        <!-- Somente adiciona a parte do endereço se houver algum endereço associado -->
+        @if (Model.Enderecos != null && Model.Enderecos.Any())
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Enderecos.First().logradouro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Enderecos.First().logradouro)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Enderecos.First().numero)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Enderecos.First().numero)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Enderecos.First().complemento)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Enderecos.First().complemento)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Enderecos.First().bairro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Enderecos.First().bairro)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Enderecos.First().cep)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Enderecos.First().cep)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Enderecos.First().municipio)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Enderecos.First().municipio)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Enderecos.First().uf)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Enderecos.First().uf)
+            </dd>
+        }
+    </dl>
+</div>
